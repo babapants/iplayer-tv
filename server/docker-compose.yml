@@ -1,0 +1,9 @@
+services:
+  iplayer-tv-server:
+    build: .
+    ports: ["8000:8000"]
+    volumes: ["./data:/data"]
+    environment:
+      IPLAYER_QUALITY: "hd,sd"
+      IPLAYER_CACHE_HOURS: "12"
+    restart: unless-stopped
